@@ -43,7 +43,11 @@
                     aria-labelledby="Link to EDIT's facebook page"
                     class="social-link"
                 >
-                    <i class="fab fa-facebook-square"></i>
+                    <fa-icon
+                        :icon="['fab', 'facebook-square']"
+                        aria-label="facebook"
+                        class="icon"
+                    />
                     sweyorkuk
                 </a>
 
@@ -52,7 +56,11 @@
                     aria-labelledby="Mail to EDIT's email address"
                     class="social-link"
                 >
-                    <i class="fas fa-envelope-square"></i>
+                    <fa-icon
+                        :icon="['fas', 'envelope-square']"
+                        aria-label="email"
+                        class="icon"
+                    />
                     edit@yusu.org
                 </a>
             </div>
@@ -146,7 +154,7 @@
         margin-bottom: 20px;
     }
 
-    #contact .social-link i {
+    #contact .social-link .icon {
         font-size: 80px;
         background: -webkit-linear-gradient(
             45deg,
@@ -160,7 +168,7 @@
     }
 
     @media only screen and (max-width: 1080px) {
-        #contact .social-link i {
+        #contact .social-link .icon {
             font-size: 60px;
         }
     }

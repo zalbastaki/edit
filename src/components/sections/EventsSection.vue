@@ -27,17 +27,22 @@
 
                     <div class="details">
                         <div class="detail">
-                            <i class="fas fa-clock" aria-label="clock icon"></i>
+                            <fa-icon
+                                :icon="['fas', 'clock']"
+                                aria-label="time"
+                                class="icon"
+                            />
                             <p class="text">
                                 2pm - 3:30pm
                             </p>
                         </div>
 
                         <div class="detail">
-                            <i
-                                class="fas fa-map-marker-alt"
-                                aria-label="map marker icon"
-                            ></i>
+                            <fa-icon
+                                :icon="['fas', 'map-marker-alt']"
+                                aria-label="place"
+                                class="icon"
+                            />
                             <p class="text">
                                 The Portal Bookshop
                             </p>
@@ -77,17 +82,22 @@
 
                     <div class="details">
                         <div class="detail">
-                            <i class="fas fa-clock" aria-label="clock icon"></i>
+                            <fa-icon
+                                :icon="['fas', 'clock']"
+                                aria-label="time"
+                                class="icon"
+                            />
                             <p class="text">
                                 2pm - 5pm
                             </p>
                         </div>
 
                         <div class="detail">
-                            <i
-                                class="fas fa-map-marker-alt"
-                                aria-label="map marker icon"
-                            ></i>
+                            <fa-icon
+                                :icon="['fas', 'map-marker-alt']"
+                                aria-label="place"
+                                class="icon"
+                            />
                             <p class="text">
                                 SLB/004
                             </p>
@@ -201,7 +211,7 @@
         margin-right: 15px;
     }
 
-    #events .event-card .detail i {
+    #events .event-card .detail .icon {
         color: $primary-color;
         margin-right: 5px;
     }
