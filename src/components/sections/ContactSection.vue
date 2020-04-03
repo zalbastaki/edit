@@ -69,7 +69,7 @@
 <style lang="scss" scoped>
     #contact {
         align-items: center;
-        height: calc(100vh - $footer-height);
+        height: calc(100vh - #{$footer-height});
         background: $secondary-bg-color;
         padding-left: $side-space;
         padding-right: $nav-side-space;
