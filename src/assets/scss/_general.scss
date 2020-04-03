@@ -1,0 +1,77 @@
+html {
+    scroll-behavior: smooth;
+}
+
+#app {
+    font-family: $main-font;
+}
+
+.hidden {
+    display: none;
+}
+
+.heading {
+    color: $primary-color;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 7px;
+    margin: 0;
+}
+
+.subheading {
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.text {
+    letter-spacing: 2px;
+    line-height: 30px;
+    font-size: 16px;
+    margin: 0;
+}
+
+.link {
+    color: $primary-color;
+    letter-spacing: 1px;
+}
+
+.img-wrapper {
+    position: relative;
+}
+
+.img-overlay {
+    /* content */
+    background: $tertiary-color;
+    background: -moz-linear-gradient(45deg, $secondary-color 0%, $primary-color 50%, $tertiary-color 100%);
+    background: -webkit-linear-gradient(45deg, $secondary-color 0%, $primary-color 50%, $tertiary-color 100%);
+    background: linear-gradient(45deg, $secondary-color 0%, $primary-color 50%, $tertiary-color 100%);
+    opacity: .7;
+
+    /* position */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.img {
+    /* content */
+    background-color: #fff;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* size */
+    width: 100%;
+    height: 100%;
+}
+
+@media only screen and (max-width: 1080px) {
+    .subheading {
+        font-size: 20px;
+    }
+}
