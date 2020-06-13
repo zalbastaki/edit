@@ -15,6 +15,10 @@
         scroll-behavior: smooth;
     }
 
+    body {
+        margin-top: -18px;
+    }
+
     #app {
         font-family: $main-font;
     }

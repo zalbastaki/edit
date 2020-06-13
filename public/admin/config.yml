@@ -6,15 +6,95 @@ media_folder: "src/assets/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-    - name: "pages"
-      label: "Pages"
+    - name: "sections"
+      label: "Sections"
       delete: false
       editor:
         preview: false
       files:
-        - name: "home"
-          label: "Home Page"
-          file: "src/content/home.md"
+        - name: "header"
+          label: "Header Section"
+          file: "src/content/header.md"
           delete: false
           fields:
-            - {label: "Title", name: "title", widget: "string"}
+            - {label: "Heading", name: "heading", widget: "string"}
+            - {label: "Subheading", name: "subheading", widget: "string"}
+            - label: "Primary Button"
+              name: "button1"
+              widget: "object"
+              fields:
+                - {label: "Label", name: "label", widget: "string"}
+                - {label: "Link", name: "link", widget: "string"}
+            - label: "Secondary Button"
+              name: "button2"
+              widget: "object"
+              fields:
+                - {label: "Label", name: "label", widget: "string"}
+                - {label: "Link", name: "link", widget: "string"}
+            - {label: "Image", name: "image", widget: "image"}
+        - name: "about"
+          label: "About Section"
+          file: "src/content/about.md"
+          delete: false
+          fields:
+            - {label: "Heading", name: "heading", widget: "string"}
+            - {label: "Subheading", name: "subheading", widget: "string"}
+            - {label: "Content", name: "content", widget: "markdown"}
+            - label: "Button"
+              name: "button"
+              widget: "object"
+              fields:
+                - {label: "Label", name: "label", widget: "string"}
+                - {label: "Link", name: "link", widget: "string"}
+            - {label: "Image", name: "image", widget: "image"}
+        - name: "events"
+          label: "Events Section"
+          file: "src/content/events.md"
+          delete: false
+          fields:
+            - {label: "Heading", name: "heading", widget: "string"}
+            - label: "Events"
+              name: "events"
+              widget: "list"
+              required: false
+              fields:
+                - {label: "Name", name: "name", widget: "string"}
+                - {label: "Description", name: "description", widget: "text"}
+                - label: "Link"
+                  name: "link"
+                  widget: "object"
+                  fields:
+                    - {label: "Label", name: "label", widget: "string"}
+                    - {label: "Link", name: "link", widget: "string"}
+                - label: "Date and Time"
+                  name: "datetime"
+                  widget: "object"
+                  fields:
+                    - {label: "Start time", name: "start", widget: "datetime", dateFormat: "DD/MM/YYYY", timeFormat: "HH:mm"}
+                    - {label: "End time", name: "end", widget: "datetime", dateFormat: "DD/MM/YYYY", timeFormat: "HH:mm"}
+                - label: "Location"
+                  name: "location"
+                  widget: "object"
+                  fields:
+                    - {label: "Location Name", name: "name", widget: "string"}
+                    - {label: "Google Maps Link", name: "link", widget: "string", required: false}
+        - name: "gallery"
+          label: "Gallery Section"
+          file: "src/content/gallery.md"
+          delete: false
+          fields:
+            - {label: "Heading", name: "heading", widget: "string"}
+            - {label: "Images", name: "images", widget: "image"}
+        - name: "contact"
+          label: "Contact Section"
+          file: "src/content/contact.md"
+          delete: false
+          fields:
+            - {label: "Heading", name: "heading", widget: "string"}
+            - {label: "Email", name: "email", widget: "string"}
+            - label: "Facebook"
+              name: "facebook"
+              widget: "object"
+              fields:
+                - {label: "Label", name: "label", widget: "string"}
+                - {label: "Link", name: "link", widget: "string"}

@@ -69,8 +69,13 @@
 </template>
 
 <script>
+    import dataLoader from '../../mixins/dataLoader';
+    import data from '../../content/contact.md';
+
     export default {
         name: 'contact-section',
+
+        mixins: [dataLoader(data)],
     };
 </script>
 

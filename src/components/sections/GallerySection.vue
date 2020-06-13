@@ -51,8 +51,13 @@
 </template>
 
 <script>
+    import dataLoader from '../../mixins/dataLoader';
+    import data from '../../content/gallery.md';
+
     export default {
         name: 'gallery-section',
+
+        mixins: [dataLoader(data)],
     };
 </script>
 

@@ -39,8 +39,13 @@
 </template>
 
 <script>
+    import dataLoader from '../../mixins/dataLoader';
+    import data from '../../content/about.md';
+
     export default {
         name: 'about-section',
+
+        mixins: [dataLoader(data)],
     };
 </script>
 

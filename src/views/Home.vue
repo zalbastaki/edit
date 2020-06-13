@@ -13,9 +13,6 @@
 </template>
 
 <script>
-    import dataLoader from '../mixins/dataLoader';
-    import data from '../content/home.md';
-
     import NavBar from '../components/NavBar';
     import HeaderSection from '../components/sections/HeaderSection';
     import AboutSection from '../components/sections/AboutSection';
@@ -26,8 +23,6 @@
 
     export default {
         name: 'home',
-
-        mixins: [dataLoader(data)],
 
         components: {
             NavBar,

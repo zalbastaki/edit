@@ -130,8 +130,13 @@
 </template>
 
 <script>
+    import dataLoader from '../../mixins/dataLoader';
+    import data from '../../content/events.md';
+
     export default {
         name: 'events-section',
+
+        mixins: [dataLoader(data)],
     };
 </script>
 

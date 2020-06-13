@@ -1,38 +1,17 @@
 <template>
     <nav id="home-nav">
         <ul>
-            <li class="nav-item">
-                <a href="#header" aria-labelledby="Link to Header section">
+            <li
+                v-for="(section, index) in sections"
+                :key="index"
+                class="nav-item"
+            >
+                <a
+                    :href="`#${section}`"
+                    :aria-labelledby="`Link to ${section} section`"
+                >
                     <span class="nav-item-indicator"></span>
-                    <span class="nav-item-label">Home</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#about" aria-labelledby="Link to About section">
-                    <span class="nav-item-indicator"></span>
-                    <span class="nav-item-label">About</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#events" aria-labelledby="Link to Events section">
-                    <span class="nav-item-indicator"></span>
-                    <span class="nav-item-label">Events</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#gallery" aria-labelledby="Link to Gallery section">
-                    <span class="nav-item-indicator"></span>
-                    <span class="nav-item-label">Gallery</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a href="#contact" aria-labelledby="Link to Contact Us section">
-                    <span class="nav-item-indicator"></span>
-                    <span class="nav-item-label">Contact</span>
+                    <span class="nav-item-label">{{ section }}</span>
                 </a>
             </li>
         </ul>
@@ -42,6 +21,12 @@
 <script>
     export default {
         name: 'nav-bar',
+
+        data() {
+            return {
+                sections: ['header', 'about', 'events', 'gallery', 'contact'],
+            };
+        },
     };
 </script>
 
