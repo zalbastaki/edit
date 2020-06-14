@@ -2,8 +2,12 @@ backend:
     name: git-gateway
     branch: master
 
-media_folder: "src/assets/images/uploads"
-public_folder: "/images/uploads"
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: zalbastaki
+    api_key: 836764511646129
+    multiple: true
 
 collections:
     - name: "sections"
@@ -54,6 +58,7 @@ collections:
           fields:
             - {label: "Heading", name: "heading", widget: "string"}
             - label: "Events"
+              label_singular: "Event"
               name: "events"
               widget: "list"
               required: false
@@ -77,7 +82,7 @@ collections:
                   widget: "object"
                   fields:
                     - {label: "Location Name", name: "name", widget: "string"}
-                    - {label: "Google Maps Link", name: "link", widget: "string", required: false}
+                    - {label: "Location Link", name: "link", widget: "string", required: false}
         - name: "gallery"
           label: "Gallery Section"
           file: "src/content/gallery.md"

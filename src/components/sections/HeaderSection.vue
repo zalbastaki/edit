@@ -3,29 +3,28 @@
         <div class="col-6">
             <div class="text-content">
                 <h1 class="heading">
-                    Equality and Diversity in Tech.
+                    {{ data.heading }}
                 </h1>
 
                 <h3 class="subheading">
-                    Together, we can change the narrative, we can rewrite our
-                    story, we can give everyone a voice.
+                    {{ data.subheading }}
                 </h3>
 
                 <div class="call-to-action">
                     <a
-                        href="#events"
-                        aria-labelledby="Link to Events section"
+                        :href="data.button1.link"
+                        :aria-labelledby="`Link to ${data.button1.label}`"
                         class="btn btn-fill"
                     >
-                        Events
+                        {{ data.button1.label }}
                     </a>
 
                     <a
-                        href="#contact"
-                        aria-labelledby="Link to Contact Us section"
+                        :href="data.button2.link"
+                        :aria-labelledby="`Link to ${data.button2.label}`"
                         class="btn btn-outline"
                     >
-                        Contact Us
+                        {{ data.button2.label }}
                     </a>
                 </div>
             </div>
@@ -33,8 +32,8 @@
 
         <div class="col-6">
             <div class="img-wrapper">
-                <div class="img-overlay"></div>
-                <div class="img"></div>
+                <div class="img-overlay" />
+                <div :style="{ 'background-image': `url(${data.image})` }" />
             </div>
         </div>
     </header>
@@ -55,51 +54,44 @@
     #header {
         padding-left: $side-space;
         height: 100vh;
-    }
 
-    /* TEXT CONTENT */
-    #header .text-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
-        margin-right: $side-space;
-    }
-
-    #header .heading {
-        font-size: 80px;
-    }
-
-    @media only screen and (max-width: 1080px) {
-        #header .heading {
-            font-size: 50px;
+        .text-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+            margin-right: $side-space;
         }
-    }
 
-    #header .subheading {
-        margin: 50px 0;
-    }
+        .heading {
+            font-size: 80px;
 
-    #header .call-to-action {
-        display: flex;
-        flex-wrap: wrap;
-    }
+            @media only screen and (max-width: 1080px) {
+                font-size: 50px;
+            }
+        }
 
-    #header .call-to-action > *:not(:last-child) {
-        margin: 0 20px 20px 0;
-    }
+        .subheading {
+            margin: 50px 0;
+        }
 
-    /* IMAGE */
-    #header .img-wrapper {
-        width: 100%;
-        height: 100%;
+        .call-to-action {
+            display: flex;
+            flex-wrap: wrap;
 
-        /* clip section */
-        -webkit-clip-path: url(#woman-outline);
-        clip-path: url(#woman-outline);
-    }
+            *:not(:last-child) {
+                margin: 0 20px 20px 0;
+            }
+        }
 
-    #header .img {
-        background-image: url(../../assets/images/group-pic.jpeg);
+        /* IMAGE */
+        .img-wrapper {
+            width: 100%;
+            height: 100%;
+
+            /* clip section */
+            -webkit-clip-path: url(#woman-outline);
+            clip-path: url(#woman-outline);
+        }
     }
 </style>
