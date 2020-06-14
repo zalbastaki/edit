@@ -10,5 +10,6 @@ content: >-
 button:
   label: Gallery
   link: "#gallery"
-image: /images/uploads/group-pic.jpeg
+image:
+  - https://res.cloudinary.com/zalbastaki/image/upload/v1592129760/EDIT/group-pic.jpg
 ---
