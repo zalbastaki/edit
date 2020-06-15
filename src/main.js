@@ -4,8 +4,10 @@ import router from './router';
 import store from './store';
 
 import icons from './plugins/icons';
+import Siema from 'v-siema';
 
 Vue.use(icons);
+Vue.use(Siema);
 
 Vue.config.productionTip = false;
 

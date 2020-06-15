@@ -7426,6 +7426,11 @@ uuid@^3.0.1, uuid@^3.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
+v-siema@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/v-siema/-/v-siema-0.0.6.tgz#695572cce4d0ac2bd967dda310f1bd095a789bdf"
+  integrity sha512-o5qIubGx8X9v6tday8xIBqFbV8gr1InW7Ibp1ZdMN7vR2ekVh1T26dNy2Wou2U/gomBVFv0NNSDKvghyB+0Bjw==
+
 validate-npm-package-license@^3.0.1:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/validate-npm-package-license/-/validate-npm-package-license-3.0.4.tgz#fc91f6b9c7ba15c857f4cb2c5defeec39d4f410a"
