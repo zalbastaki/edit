@@ -3,7 +3,10 @@
         <div class="col-4">
             <div class="img-wrapper">
                 <div class="img-overlay" />
-                <div :style="{ 'background-image': `url(${data.image})` }" />
+                <div
+                    class="img"
+                    :style="{ 'background-image': `url(${data.image})` }"
+                />
             </div>
         </div>
 
