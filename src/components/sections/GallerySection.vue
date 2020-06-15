@@ -37,7 +37,8 @@
 
     .slider {
         width: 80vw;
-        max-height: 80vh;
+        max-width: 1200px;
+        max-height: 70vh;
 
         img {
             width: 100%;
