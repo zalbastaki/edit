@@ -11,16 +11,6 @@
                 :event="event"
             />
         </ul>
-
-        <div class="call-to-action">
-            <a
-                href="events.html"
-                aria-labelledby="Link to Events page"
-                class="btn btn-fill"
-            >
-                More Events
-            </a>
-        </div>
     </section>
 </template>
 
@@ -47,8 +37,7 @@
     }
 
     #events {
-        padding-left: $side-space;
-        padding-right: $nav-side-space;
+        padding: $side-space $nav-side-space $side-space $side-space;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -61,12 +50,6 @@
             list-style: none;
             margin: 0;
             padding: 0;
-        }
-
-        .call-to-action {
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
         }
     }
 </style>

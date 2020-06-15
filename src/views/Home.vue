@@ -38,7 +38,7 @@
 
 <style lang="scss" scoped>
     #home section {
-        height: 100vh;
+        min-height: 100vh;
     }
 
     #home section:nth-of-type(odd) {
