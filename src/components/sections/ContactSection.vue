@@ -8,16 +8,11 @@
 
                 <form
                     name="contact"
-                    method="POST"
+                    method="post"
+                    data-netlify="true"
                     netlify-honeypot="bot-field"
-                    netlify
                 >
-                    <p class="hidden">
-                        <label>
-                            Don’t fill this out if you're human:
-                            <input name="bot-field" />
-                        </label>
-                    </p>
+                    <input type="hidden" name="form-name" value="contact" />
 
                     <input type="text" name="name" id="name" />
                     <label for="name">Name</label>
