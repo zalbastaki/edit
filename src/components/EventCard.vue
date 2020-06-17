@@ -106,12 +106,9 @@
 
 <style lang="scss" scoped>
     .event-card {
-        $border-radius: 15px;
-
         display: flex;
         width: 100%;
         background: $secondary-bg-color;
-        border-radius: $border-radius;
         box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.2);
 
         &:nth-of-type(even) {
@@ -173,16 +170,6 @@
             .month {
                 text-transform: uppercase;
             }
-        }
-
-        &:nth-of-type(odd) .date .img-overlay {
-            border-top-right-radius: $border-radius;
-            border-bottom-right-radius: $border-radius;
-        }
-
-        &:nth-of-type(even) .date .img-overlay {
-            border-top-left-radius: $border-radius;
-            border-bottom-left-radius: $border-radius;
         }
     }
 </style>
