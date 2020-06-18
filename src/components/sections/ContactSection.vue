@@ -1,6 +1,6 @@
 <template>
     <section id="contact" class="container" :class="$mq">
-        <div class="col-7">
+        <div :class="{ 'col-7': $mq !== 'mobile' }">
             <div class="form-wrapper">
                 <h2 class="subheading">
                     {{ data.heading }}
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="col-5">
+        <div :class="{ 'col-5': $mq !== 'mobile' }">
             <div class="social-links">
                 <a
                     :href="data.facebook.link"
@@ -77,7 +77,7 @@
 <style lang="scss" scoped>
     #contact {
         align-items: center;
-        height: calc(100vh - #{$footer-height});
+        min-height: calc(100vh - #{$footer-height});
         background: $secondary-bg-color;
         padding-left: $side-space;
         padding-right: $nav-side-space;
@@ -163,6 +163,42 @@
             .social-link {
                 .icon {
                     font-size: 60px;
+                }
+            }
+        }
+
+        &.mobile {
+            padding: $side-space;
+
+            div {
+                width: 100%;
+            }
+
+            .form-wrapper {
+                height: unset;
+                border-right: 0;
+                padding-right: 0;
+                margin-bottom: 40px;
+
+                .subheading {
+                    margin-bottom: 20px;
+                }
+            }
+
+            .social-links {
+                padding-left: 0;
+            }
+
+            .social-link {
+                font-size: 14px;
+
+                &:not(:last-of-type) {
+                    margin-bottom: 15px;
+                }
+
+                .icon {
+                    font-size: 30px;
+                    margin-right: 5px;
                 }
             }
         }

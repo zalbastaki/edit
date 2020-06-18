@@ -1,6 +1,6 @@
 <template>
     <section id="about" class="container" :class="$mq">
-        <div class="col-4">
+        <div class="image" :class="{ 'col-4': $mq !== 'mobile' }">
             <div class="img-wrapper">
                 <div class="img-overlay" />
                 <div
@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div class="col-8">
+        <div :class="{ 'col-8': $mq !== 'mobile' }">
             <div class="text-content">
                 <h2 class="subheading">
                     {{ data.heading }}
@@ -86,6 +86,31 @@
 
             .heading {
                 font-size: 40px;
+            }
+        }
+
+        &.mobile {
+            flex-direction: column;
+            padding: 0;
+
+            .image {
+                width: 100%;
+                height: 300px;
+            }
+
+            .text-content {
+                margin: $side-space;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .heading {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+
+            .btn {
+                margin-top: 50px;
             }
         }
     }

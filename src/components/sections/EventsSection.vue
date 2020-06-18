@@ -32,15 +32,15 @@
 </script>
 
 <style lang="scss" scoped>
-    #home #events .subheading {
-        margin-bottom: 50px;
-    }
-
-    #events {
+    #home #events {
         padding: $side-space $nav-side-space $side-space $side-space;
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        .subheading {
+            margin-bottom: 50px;
+        }
 
         ul {
             list-style: none;
@@ -50,6 +50,12 @@
 
         &.tablet {
             padding-right: $nav-side-space-tablet;
+        }
+
+        &.mobile {
+            .subheading {
+                margin-bottom: 20px;
+            }
         }
     }
 </style>

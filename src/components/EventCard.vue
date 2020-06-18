@@ -1,6 +1,6 @@
 <template>
-    <li class="event-card">
-        <div class="text-content col-9">
+    <li class="event-card" :class="$mq">
+        <div class="text-content" :class="{ 'col-9': $mq !== 'mobile' }">
             <h3 class="heading">
                 {{ event.name }}
             </h3>
@@ -52,9 +52,9 @@
             </div>
         </div>
 
-        <div class="date img-wrapper col-3">
+        <div class="date img-wrapper" :class="{ 'col-3': $mq !== 'mobile' }">
             <p class="text">
-                <span class="day" :class="$mq">{{ day }}</span>
+                <span class="day">{{ day }}</span>
                 <br />
                 <span class="month">{{ month }}</span>
             </p>
@@ -161,14 +161,51 @@
 
             .day {
                 font-size: 100px;
-
-                &.tablet {
-                    font-size: 60px;
-                }
             }
 
             .month {
                 text-transform: uppercase;
+            }
+        }
+
+        &.tablet {
+            .date {
+                .day {
+                    font-size: 60px;
+                }
+            }
+        }
+
+        &.mobile {
+            flex-direction: column-reverse;
+
+            .date {
+                height: 120px;
+
+                .day {
+                    font-size: 50px;
+                }
+            }
+
+            .text-content {
+                padding: 35px;
+            }
+
+            .heading {
+                margin: 0 0 20px;
+                font-size: 25px;
+            }
+
+            .link {
+                font-size: 14px;
+            }
+
+            .detail {
+                margin: 0;
+
+                .text {
+                    font-size: 14px;
+                }
             }
         }
     }

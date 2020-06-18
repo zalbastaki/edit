@@ -1,9 +1,16 @@
 <template>
     <footer class="footer">
-        <p class="text">
+        <p class="text" :class="$mq">
             © {{ year }} Equality & Diversity in Tech Society
             <br />
-            Designed and developed by Zain Albastaki
+            Designed and developed by
+            <a
+                href="https://www.linkedin.com/in/zalbastaki/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Zain Albastaki
+            </a>
         </p>
     </footer>
 </template>
@@ -33,6 +40,14 @@
 
         .text {
             font-size: 12px;
+
+            a {
+                color: $primary-color;
+            }
+
+            &.mobile {
+                font-size: 10px;
+            }
         }
     }
 </style>

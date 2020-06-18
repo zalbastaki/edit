@@ -1,6 +1,6 @@
 <template>
     <header id="header" class="container" :class="$mq">
-        <div class="col-6">
+        <div :class="{ 'col-6': $mq !== 'mobile' }">
             <div class="text-content">
                 <h1 class="heading">
                     {{ data.heading }}
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="col-6">
+        <div class="image" :class="{ 'col-6': $mq !== 'mobile' }">
             <div class="img-wrapper">
                 <div class="img-overlay" />
                 <div
@@ -56,7 +56,7 @@
 <style lang="scss" scoped>
     #header {
         padding-left: $side-space;
-        height: 100vh;
+        min-height: 100vh;
 
         .text-content {
             display: flex;
@@ -94,6 +94,36 @@
         &.tablet {
             .heading {
                 font-size: 50px;
+            }
+        }
+
+        &.mobile {
+            padding: 0;
+            flex-direction: column-reverse;
+            justify-content: flex-end;
+
+            .image {
+                width: 100%;
+                height: 150px;
+
+                .img-wrapper {
+                    -webkit-clip-path: none;
+                    clip-path: none;
+                }
+            }
+
+            .text-content {
+                margin: $side-space;
+            }
+
+            .heading {
+                font-size: 30px;
+            }
+
+            .subheading {
+                line-height: 30px;
+                margin: 25px 0;
+                font-size: 16px;
             }
         }
     }
