@@ -1,5 +1,5 @@
 <template>
-    <section id="events">
+    <section id="events" :class="$mq">
         <h2 class="subheading">
             {{ data.heading }}
         </h2>
@@ -42,14 +42,14 @@
         flex-direction: column;
         justify-content: center;
 
-        @media only screen and (max-width: 1080px) {
-            padding-right: $nav-side-space-tablet;
-        }
-
         ul {
             list-style: none;
             margin: 0;
             padding: 0;
+        }
+
+        &.tablet {
+            padding-right: $nav-side-space-tablet;
         }
     }
 </style>

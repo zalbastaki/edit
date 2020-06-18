@@ -1,5 +1,5 @@
 <template>
-    <section id="about" class="container">
+    <section id="about" class="container" :class="$mq">
         <div class="col-4">
             <div class="img-wrapper">
                 <div class="img-overlay" />
@@ -58,10 +58,6 @@
     #about {
         padding-right: $nav-side-space;
 
-        @media only screen and (max-width: 1080px) {
-            padding-right: $nav-side-space-tablet;
-        }
-
         .text-content {
             display: flex;
             flex-direction: column;
@@ -75,19 +71,22 @@
         .heading {
             font-size: 50px;
             margin-bottom: 50px;
-
-            @media only screen and (max-width: 1080px) {
-                font-size: 40px;
-            }
         }
 
         .btn {
             margin-top: 100px;
         }
 
-        /* IMAGE */
         .img-wrapper {
             height: 100%;
+        }
+
+        &.tablet {
+            padding-right: $nav-side-space-tablet;
+
+            .heading {
+                font-size: 40px;
+            }
         }
     }
 </style>

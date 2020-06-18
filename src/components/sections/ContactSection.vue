@@ -1,5 +1,5 @@
 <template>
-    <section id="contact" class="container">
+    <section id="contact" class="container" :class="$mq">
         <div class="col-7">
             <div class="form-wrapper">
                 <h2 class="subheading">
@@ -82,10 +82,6 @@
         padding-left: $side-space;
         padding-right: $nav-side-space;
 
-        @media only screen and (max-width: 1080px) {
-            padding-right: $nav-side-space-tablet;
-        }
-
         div {
             display: flex;
             flex-direction: column;
@@ -158,8 +154,14 @@
             .icon {
                 font-size: 80px;
                 margin-right: 10px;
+            }
+        }
 
-                @media only screen and (max-width: 1080px) {
+        &.tablet {
+            padding-right: $nav-side-space-tablet;
+
+            .social-link {
+                .icon {
                     font-size: 60px;
                 }
             }

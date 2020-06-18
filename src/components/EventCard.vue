@@ -54,7 +54,7 @@
 
         <div class="date img-wrapper col-3">
             <p class="text">
-                <span class="day">{{ day }}</span>
+                <span class="day" :class="$mq">{{ day }}</span>
                 <br />
                 <span class="month">{{ month }}</span>
             </p>
@@ -162,8 +162,8 @@
             .day {
                 font-size: 100px;
 
-                @media only screen and (max-width: 1080px) {
-                    font-size: 80px;
+                &.tablet {
+                    font-size: 60px;
                 }
             }
 

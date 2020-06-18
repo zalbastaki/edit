@@ -5,9 +5,18 @@ import store from './store';
 
 import icons from './plugins/icons';
 import Siema from 'v-siema';
+import VueMq from 'vue-mq';
 
 Vue.use(icons);
 Vue.use(Siema);
+
+Vue.use(VueMq, {
+    breakpoints: {
+        mobile: 700,
+        tablet: 1100,
+        desktop: Infinity,
+    },
+});
 
 Vue.config.productionTip = false;
 

@@ -1,5 +1,5 @@
 <template>
-    <header id="header" class="container">
+    <header id="header" class="container" :class="$mq">
         <div class="col-6">
             <div class="text-content">
                 <h1 class="heading">
@@ -68,10 +68,6 @@
 
         .heading {
             font-size: 80px;
-
-            @media only screen and (max-width: 1080px) {
-                font-size: 50px;
-            }
         }
 
         .subheading {
@@ -87,14 +83,18 @@
             }
         }
 
-        /* IMAGE */
         .img-wrapper {
             width: 100%;
             height: 100%;
 
-            /* clip section */
             -webkit-clip-path: url(#woman-outline);
             clip-path: url(#woman-outline);
+        }
+
+        &.tablet {
+            .heading {
+                font-size: 50px;
+            }
         }
     }
 </style>

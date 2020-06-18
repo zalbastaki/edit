@@ -1,17 +1,30 @@
 <template>
-    <nav id="home-nav">
-        <ul>
+    <nav id="home-nav" :class="$mq">
+        <button class="open-btn" @click="open = !open">
+            <fa-icon
+                :icon="['fas', 'chevron-left']"
+                aria-label="Open Menu"
+                :class="{ open }"
+            />
+        </button>
+        <ul :class="{ open }">
             <li
                 v-for="(section, index) in sections"
                 :key="index"
                 class="nav-item"
             >
                 <a
-                    :href="`#${section}`"
-                    :aria-labelledby="`Link to ${section} section`"
+                    :href="`#${section.name}`"
+                    :aria-labelledby="`Link to ${section.name} section`"
+                    @click="open = false"
                 >
-                    <span class="nav-item-indicator"></span>
-                    <span class="nav-item-label">{{ section }}</span>
+                    <span class="nav-item-indicator">
+                        <fa-icon
+                            :icon="['fas', section.icon]"
+                            :aria-label="section.name"
+                        />
+                    </span>
+                    <span class="nav-item-label">{{ section.name }}</span>
                 </a>
             </li>
         </ul>
@@ -24,7 +37,14 @@
 
         data() {
             return {
-                sections: ['header', 'about', 'events', 'gallery', 'contact'],
+                sections: [
+                    { name: 'header', icon: 'home' },
+                    { name: 'about', icon: 'id-card' },
+                    { name: 'events', icon: 'calendar-alt' },
+                    { name: 'gallery', icon: 'images' },
+                    { name: 'contact', icon: 'paper-plane' },
+                ],
+                open: false,
             };
         },
     };
@@ -33,68 +53,99 @@
 <style lang="scss" scoped>
     nav#home-nav {
         position: fixed;
-        right: 20px;
+        right: 0;
         top: 50vh;
         transform: translateY(-50%);
         z-index: 10;
-    }
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
 
-    nav#home-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+        .open-btn {
+            border: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 35px;
+            font-size: 25px;
+            color: $primary-color;
+            background: $primary-bg-color;
+            cursor: pointer;
 
-    nav#home-nav .nav-item {
-        position: relative;
-        text-align: right;
-    }
+            &:hover {
+                background: darken($primary-bg-color, 5%);
+            }
 
-    nav#home-nav .nav-item:not(:last-of-type) {
-        margin-bottom: 30px;
-    }
+            &:focus {
+                outline: none;
+            }
 
-    nav#home-nav .nav-item a {
-        text-decoration: none;
-    }
-
-    nav#home-nav .nav-item-indicator {
-        position: absolute;
-        right: 0;
-        display: inline-block;
-        height: 8px;
-        width: 8px;
-        border-radius: 50%;
-        border: 2px solid $secondary-color;
-    }
-
-    nav#home-nav .nav-item-label {
-        opacity: 0;
-        color: $secondary-color;
-        text-transform: uppercase;
-        transition: opacity 0.2s linear;
-        font-size: 14px;
-    }
-
-    /* When hovered over a nav item, show the label */
-    nav#home-nav .nav-item:hover .nav-item-label {
-        opacity: 100%;
-    }
-
-    /* When hovered over a nav item, hide the indicator */
-    nav#home-nav .nav-item:hover .nav-item-indicator {
-        display: none;
-    }
-
-    @media only screen and (max-width: 1080px) {
-        /* Because there's no hover on tablet, always show text labels */
-        nav#home-nav .nav-item-label {
-            opacity: 100%;
+            .open {
+                transform: rotate(180deg);
+            }
         }
 
-        /* When hovered over a nav item, hide the indicator */
-        nav#home-nav .nav-item-indicator {
-            display: none;
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            background: $primary-bg-color;
+            overflow: hidden;
+            width: 0;
+            height: 290px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: width 0.4s linear;
+
+            &.open {
+                width: 90px;
+            }
+        }
+
+        .nav-item {
+            position: relative;
+            text-align: center;
+
+            a {
+                display: block;
+                text-decoration: none;
+                color: $primary-color;
+            }
+
+            &:not(:last-of-type) {
+                a {
+                    padding-bottom: 30px;
+                }
+            }
+
+            &:hover {
+                .nav-item-label {
+                    opacity: 100%;
+                }
+
+                .nav-item-indicator {
+                    display: none;
+                }
+            }
+        }
+
+        .nav-item-indicator {
+            position: absolute;
+            right: 50%;
+            transform: translateX(50%);
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        .nav-item-label {
+            opacity: 0;
+            text-transform: uppercase;
+            transition: opacity 0.2s linear;
+            font-size: 14px;
         }
     }
 </style>
