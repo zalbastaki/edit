@@ -1,6 +1,6 @@
 <template>
     <header id="header" class="container" :class="$mq">
-        <div :class="{ 'col-6': $mq !== 'mobile' }">
+        <div :class="`col-${$mq === 'mobile' ? '10' : '6'}`">
             <div class="text-content">
                 <h1 class="heading">
                     {{ data.heading }}
@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="image" :class="{ 'col-6': $mq !== 'mobile' }">
+        <div :class="`col-${$mq === 'mobile' ? '2' : '6'}`">
             <div class="img-wrapper">
                 <div class="img-overlay" />
                 <div
@@ -99,21 +99,14 @@
 
         &.mobile {
             padding: 0;
-            flex-direction: column-reverse;
-            justify-content: flex-end;
 
-            .image {
-                width: 100%;
-                height: 150px;
-
-                .img-wrapper {
-                    -webkit-clip-path: none;
-                    clip-path: none;
-                }
+            .img-wrapper {
+                -webkit-clip-path: none;
+                clip-path: none;
             }
 
             .text-content {
-                margin: $side-space;
+                margin: 0 $side-space-mobile;
             }
 
             .heading {

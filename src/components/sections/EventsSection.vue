@@ -33,7 +33,7 @@
 
 <style lang="scss" scoped>
     #home #events {
-        padding: $side-space $nav-side-space $side-space $side-space;
+        padding: $side-space;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -48,11 +48,9 @@
             padding: 0;
         }
 
-        &.tablet {
-            padding-right: $nav-side-space-tablet;
-        }
-
         &.mobile {
+            padding: $side-space $side-space-mobile;
+
             .subheading {
                 margin-bottom: 20px;
             }

@@ -24,7 +24,9 @@
                             :aria-label="section.name"
                         />
                     </span>
-                    <span class="nav-item-label">{{ section.name }}</span>
+                    <span class="nav-item-label">
+                        {{ section.name }}
+                    </span>
                 </a>
             </li>
         </ul>
@@ -121,16 +123,6 @@
                     padding-bottom: 30px;
                 }
             }
-
-            &:hover {
-                .nav-item-label {
-                    opacity: 100%;
-                }
-
-                .nav-item-indicator {
-                    display: none;
-                }
-            }
         }
 
         .nav-item-indicator {
@@ -146,6 +138,31 @@
             text-transform: uppercase;
             transition: opacity 0.2s linear;
             font-size: 14px;
+        }
+
+        &.desktop {
+            .nav-item {
+                &:hover {
+                    .nav-item-label {
+                        opacity: 100%;
+                    }
+
+                    .nav-item-indicator {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        &.tablet,
+        &.mobile {
+            ul {
+                height: 250px;
+
+                &.open {
+                    width: 50px;
+                }
+            }
         }
     }
 </style>

@@ -79,8 +79,7 @@
         align-items: center;
         min-height: calc(100vh - #{$footer-height});
         background: $secondary-bg-color;
-        padding-left: $side-space;
-        padding-right: $nav-side-space;
+        padding: 0 $side-space;
 
         div {
             display: flex;
@@ -158,8 +157,6 @@
         }
 
         &.tablet {
-            padding-right: $nav-side-space-tablet;
-
             .social-link {
                 .icon {
                     font-size: 60px;
@@ -168,7 +165,7 @@
         }
 
         &.mobile {
-            padding: $side-space;
+            padding: $side-space $side-space-mobile;
 
             div {
                 width: 100%;

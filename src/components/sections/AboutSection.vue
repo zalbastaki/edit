@@ -56,7 +56,7 @@
 
 <style lang="scss" scoped>
     #about {
-        padding-right: $nav-side-space;
+        padding-right: $side-space;
 
         .text-content {
             display: flex;
@@ -82,15 +82,13 @@
         }
 
         &.tablet {
-            padding-right: $nav-side-space-tablet;
-
             .heading {
                 font-size: 40px;
             }
         }
 
         &.mobile {
-            flex-direction: column;
+            flex-direction: column-reverse;
             padding: 0;
 
             .image {
@@ -99,7 +97,7 @@
             }
 
             .text-content {
-                margin: $side-space;
+                margin: $side-space $side-space-mobile;
                 align-items: flex-start;
                 text-align: left;
             }
@@ -110,7 +108,7 @@
             }
 
             .btn {
-                margin-top: 50px;
+                margin-top: 30px;
             }
         }
     }
