@@ -21,4 +21,14 @@ events:
       link: https://www.facebook.com/events/557349371789384/
     location:
       name: SLB/004
+  - datetime:
+      start: 2020-07-09T05:30:36.650Z
+      end: 2020-07-09T06:30:36.685Z
+    name: Test Event
+    description: This is a test event.
+    link:
+      label: Test
+      link: example.com
+    location:
+      name: University of York
 ---
