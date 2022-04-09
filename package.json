@@ -14,7 +14,7 @@
         "@fortawesome/free-brands-svg-icons": "^5.13.0",
         "@fortawesome/free-solid-svg-icons": "^5.13.0",
         "@fortawesome/vue-fontawesome": "^0.1.9",
-        "moment": "^2.26.0",
+        "moment": "^2.29.2",
         "parse-md": "^2.0.4",
         "prerender-spa-plugin": "^3.4.0",
         "raw-loader": "^4.0.0",
